@@ -1,3 +1,4 @@
+<%- unless @information.empty?  %>
 <div id="information">
   <div>
     City: <%= @information["name"] %>
@@ -9,3 +10,4 @@
     Weather: <%= @information["weather"][0]["description"] %>
   </div>
 </div>
+<%- end %>
