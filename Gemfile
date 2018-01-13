@@ -45,12 +45,15 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
