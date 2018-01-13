@@ -1,7 +1,8 @@
 class WeatherController < ApplicationController
   def info
-    #TODO implement OpenWeatherAPI::Client in lib
-    @information = OpenWeatherAPI::Client.new.get(city_id: seed_city_id)
+    @information = OpenWeather::Client.new(
+      { id: seed_city_id }
+    ).get
   end
 
   private

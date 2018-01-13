@@ -22,3 +22,37 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### Install
+
+```
+Heroku already makes setting application configuration easy:
+
+```
+$ heroku config:set google_analytics_key=UA-35722661-5
+```
+
+Using the figaro command, you can set values from your configuration file all at once:
+
+```
+$ figaro heroku:set -e production
+```
+
+For more information:
+
+```
+$ figaro help heroku:set
+```
+
+Other Hosts
+
+If you're not deploying to Heroku, you have two options:
+
+* Generate a remote configuration file
+* Set ENV variables directly
+
+Generating a remote configuration file is preferred because of:
+
+* familiarity – Management of config/application.yml is like that of config/database.yml.
+* isolation – Multiple applications on the same server will not produce configuration key collisions.
