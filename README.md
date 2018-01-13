@@ -56,3 +56,14 @@ Generating a remote configuration file is preferred because of:
 
 * familiarity – Management of config/application.yml is like that of config/database.yml.
 * isolation – Multiple applications on the same server will not produce configuration key collisions.
+
+## Generate seed data
+
+To improve the searching experience, we generate the seed city data from the list of open weather api.
+
+```
+$ rake db:migrate
+$ rake seed_data:cities
+```
+
+And don't worry. The process might cost time.
