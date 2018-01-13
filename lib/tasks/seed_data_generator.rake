@@ -6,6 +6,6 @@ namespace :seed_data do
     cities.each do |city|
       City.create(name: city["name"], country: city["country"], city_id: city["id"])
     end
-    Rails.logger.info "Seed data generated. Total: #{City.size} cities."
+    Rails.logger.info "Seed data generated. Total: #{City.count} cities."
   end
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GoodWeather</title>
+    <title>Good Weather</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+        <%= yield %>
+    </div>
   </body>
 </html>
