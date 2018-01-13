@@ -1,0 +1,11 @@
+<div id="information">
+  <div>
+    City: <%= @information["name"] %>
+  </div>
+  <div>
+    Country: <%= @information["sys"]["country"] %>
+  </div>
+  <div>
+    Weather: <%= @information["weather"][0]["description"] %>
+  </div>
+</div>
