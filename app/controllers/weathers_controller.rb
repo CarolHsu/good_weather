@@ -4,13 +4,17 @@ class WeathersController < ApplicationController
     @information = OpenWeather::Client.new(
       { id: seed_city_id }
     ).get
+
   end
 
   def search
     @information = OpenWeather::Client.new(
-      { q: params[:city_name] }
+      { q: params[:city_name].capitalize }
     ).get
-    render json: @information
+    Rails.logger.info @information.inspect
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
