@@ -6,6 +6,13 @@ class WeathersController < ApplicationController
     ).get
   end
 
+  def search
+    @information = OpenWeather::Client.new(
+      { q: params[:city_name] }
+    ).get
+    render json: @information
+  end
+
   private
 
   def seed_city_id
