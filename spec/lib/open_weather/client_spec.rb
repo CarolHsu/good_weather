@@ -44,5 +44,31 @@ describe OpenWeather::Client do
         end
       end
     end
+
+    context "when query by city" do
+      let(:city_name) { "London" }
+      let(:client) { OpenWeather::Client.new({q: city_name}) }
+
+      it "should have options key of q" do
+        expect(client.options[:q]).to be(city_name)
+      end
+
+      it "should generate request by city_name" do
+        expected_request = "#{OpenWeatherHost}/data/#{OpenWeatherVersion}/weather?appid=#{OpenWeatherSecret}&q=#{city_name}"
+        expect(client.send(:url_generator)).to eq(expected_request)
+      end
+
+      context "when getting response seccessfully", :vcr do
+        it "should return response as hash" do
+          response = client.get
+          expect(response).to be_a Hash
+        end
+
+        it "should return response with city_name" do
+          response = client.get
+          expect(response["name"]).to eq(city_name.capitalize)
+        end
+      end
+    end
   end
 end
