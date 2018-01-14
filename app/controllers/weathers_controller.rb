@@ -1,5 +1,6 @@
-class WeatherController < ApplicationController
-  def info
+class WeathersController < ApplicationController
+
+  def show
     @information = OpenWeather::Client.new(
       { id: seed_city_id }
     ).get

@@ -1,21 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe WeatherController, type: :controller do
+RSpec.describe WeathersController, type: :controller do
 
   describe 'Info' do
     before :each do
       srand(1)
     end
 
-    describe 'GET#info', :vcr do
+    describe 'GET#show', :vcr do
 
       it 'should render a new weather information template' do
-        get :info
-        expect(response).to render_template :info
+        get :show
+        expect(response).to render_template :show
       end
 
       it 'should call OpenWeather Client once' do
-        get :info
+        get :show
         expect(assigns[:information]["cod"]).to eq(200)
       end
 
