@@ -16,6 +16,28 @@
 </div>
 
 <script>
-  $(document).ready(function() {
+jQuery(function() {
+
+  // autocomplete
+  $("#city_name").keyup(function(e) {
+    const letters = e.target.value;
+    // privode city list when typed 2 letters
+    if(letters.length == 2) {
+       $.ajax({
+         url: '/cities/' + letters,
+         success: function(data) {
+           console.log(data);
+           return $("#city_name").autocomplete({
+             source: data
+           });
+         }
+       });
+    }
   });
+
+  // UX details
+  $("form").bind("ajax:complete", function() {
+    $("form #city_name").val("");
+  });
+});
 </script>
