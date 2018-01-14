@@ -1,6 +1,6 @@
 # README
 
-Good Weather is a service based on APIs of [OpenWeatherMap](https://openweathermap.org), it supposed to grab the realtime weather status of different city, you can also play my [demo](https://powerful-citadel-88502.herokuapp.com/)
+Good Weather is a service based on APIs of [OpenWeatherMap](https://openweathermap.org), it supposed to grab the realtime weather status of different city, you can also play my [demo](https://good-weather.herokuapp.com)
 
 
 ## Setup
