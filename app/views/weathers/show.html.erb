@@ -7,7 +7,7 @@
     <div class="col-md-6">
       <%= form_tag(weather_search_path, method: 'get', remote: true, class: "form-inline") do %>
         <div class="form-group col-md-10">
-          <%= text_field_tag(:city_name, params[:city_name], class: "form-control col-md-12") %>
+          <%= text_field_tag(:city_name, params[:city_name], class: "form-control col-md-12", placeholder: "How's the weather in...") %>
         </div>
           <%= submit_tag("Go!", class: "btn btn-primary col-md-2") %>
       <% end %>

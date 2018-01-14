@@ -31,14 +31,9 @@ RSpec.describe WeathersController, type: :controller do
 
   describe 'GET#search', :vcr do
 
-      it 'should return JSON response with correct city name' do
-        get :search, params: {:city_name => "Hong Kong"}
-        expect(JSON.parse(response.body)["name"]).to eq("Hong Kong")
-      end
-
-      it 'should return JSON response with correct city name and country code' do
-        get :search, params: {:city_name => "London,uk"}
-        expect(JSON.parse(response.body)["name"]).to eq("London")
+      it 'render js template' do
+        get :search, params: {:city_name => "London,uk"}, xhr: true
+        expect(response).to render_template("search")
       end
 
   end

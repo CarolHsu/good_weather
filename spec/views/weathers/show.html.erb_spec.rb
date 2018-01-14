@@ -28,13 +28,19 @@ describe 'weathers/show.html.erb' do
       render
       expect(rendered).to have_selector('div#information', text: fake_info["weather"][0]["description"])
     end
+
+    it 'should have searching box' do
+      assign(:information, fake_info)
+      render
+      expect(rendered).to have_selector('div#search input')
+    end
   end
 
   context "got failed response" do
-    it 'should not render information section' do
+    it 'should return "No weather data could be found"' do
       assign(:information, {})
       render
-      expect(rendered).not_to have_selector('div#information')
+      expect(rendered).to have_selector('div#information h1', text: /Sorry/)
     end
   end
 
