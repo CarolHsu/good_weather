@@ -14,7 +14,7 @@ describe 'weathers/show.html.erb' do
     it 'should render city name' do
       assign(:information, fake_info)
       render
-      expect(rendered).to have_selector('input#cityName')
+      expect(rendered).to have_selector('div#information h1', text: fake_info["name"])
     end
 
     it 'should render country code' do
