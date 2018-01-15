@@ -36,7 +36,13 @@ Now, you can check the current weather of every cities on the world, engoy!
 
 ## Test
 
-You can test by `RSpec`, just run
+Use `ChromeDriver` as `capybara` driver. You can install it if needed.
+
+```
+$ brew install chromedriver
+```
+
+And then test by `RSpec`, just run
 
 ```
 $ rspec .
